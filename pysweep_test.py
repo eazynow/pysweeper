@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 import unittest
-from minesweep import MineSweeper
+from pysweep import PySweeper
 
 
-class TestMineSweeper(unittest.TestCase):
+class TestPySweeper(unittest.TestCase):
 
     def setUp(self):
         pass
@@ -11,7 +11,7 @@ class TestMineSweeper(unittest.TestCase):
     def test_game_object_is_created_properly(self):
         rows = 4
         cols = 5
-        game = MineSweeper(rows, cols)
+        game = PySweeper(rows, cols)
         self.assertIsNotNone(game)
         self.assertEquals(game.rowSize, rows)
         self.assertEquals(game.colSize, cols)
@@ -19,10 +19,29 @@ class TestMineSweeper(unittest.TestCase):
     def test_board_returns_correctly(self):
         rows = 8
         cols = 4
-        game = MineSweeper(rows, cols)
+        game = PySweeper(rows, cols)
         self.assertIsNotNone(game)
         board = game.board()
         self.assertIsNotNone(board)
+
+    def test_board_has_correct_rows(self):
+        rows = 8
+        cols = 4
+        game = PySweeper(rows, cols)
+        self.assertIsNotNone(game)
+        board = game.board()
+        self.assertIsNotNone(board)
+        self.assertEquals(len(board), rows)
+
+    def test_board_has_correct_cols(self):
+        rows = 8
+        cols = 4
+        game = PySweeper(rows, cols)
+        self.assertIsNotNone(game)
+        board = game.board()
+        self.assertIsNotNone(board)
+        for row in board.rows:
+            self.assertEquals(len(row), cols)
 
 if __name__ == '__main__':
     unittest.main()

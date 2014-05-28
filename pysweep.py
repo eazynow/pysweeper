@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 
-class MineSweeper(object):
+class PySweeper(object):
     def __init__(self, rows=8, cols=8):
         self.rows = []
         self.rowSize = rows
