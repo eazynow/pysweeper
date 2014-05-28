@@ -40,7 +40,7 @@ class TestPySweeper(unittest.TestCase):
         self.assertIsNotNone(game)
         board = game.board()
         self.assertIsNotNone(board)
-        for row in board.rows:
+        for row in board:
             self.assertEquals(len(row), cols)
 
 if __name__ == '__main__':
