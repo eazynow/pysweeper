@@ -6,6 +6,3 @@ class PySweeper(object):
         self.rows = []
         self.rowSize = rows
         self.colSize = cols
-
-    def hello(self):
-        print "j"
