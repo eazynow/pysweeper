@@ -13,8 +13,8 @@ class TestPySweeper(unittest.TestCase):
         cols = 5
         game = PySweeper(rows, cols)
         self.assertIsNotNone(game)
-        self.assertEquals(game.rowSize, rows)
-        self.assertEquals(game.colSize, cols)
+        self.assertEquals(game.rows, rows)
+        self.assertEquals(game.cols, cols)
 
     def test_board_returns_correctly(self):
         rows = 8
@@ -35,13 +35,16 @@ class TestPySweeper(unittest.TestCase):
 
     def test_board_has_correct_cols(self):
         rows = 8
-        cols = 4
+        cols = 8
+        hidden_tile = "."
         game = PySweeper(rows, cols)
         self.assertIsNotNone(game)
         board = game.board()
         self.assertIsNotNone(board)
         for row in board:
             self.assertEquals(len(row), cols)
+            for cell in row:
+                self.assertEquals(hidden_tile, cell)
 
 if __name__ == '__main__':
     unittest.main()
